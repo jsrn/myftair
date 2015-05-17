@@ -20,7 +20,7 @@ class Room
 
   private
   def get_content
-    [Monster, Item].sample.new
+    [Monster, Potion, Sword].sample.new
   end
 
   def get_size
