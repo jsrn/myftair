@@ -1,6 +1,9 @@
 class World
+  WORLD_WIDTH  = 10
+  WORLD_HEIGHT = 10
+
   def initialize
-    @rooms = Array.new(10, Array.new(10, Room.new))
+    @rooms = Array.new(WORLD_HEIGHT, Array.new(WORLD_WIDTH))
   end
 
   def move_entity_north(entity)
@@ -10,13 +13,13 @@ class World
   end
 
   def move_entity_south(entity)
-    if entity.y_coord < 10
+    if entity.y_coord < WORLD_HEIGHT
       entity.y_coord += 1
     end
   end
 
   def move_entity_east(entity)
-    if entity.x_coord < 10
+    if entity.x_coord < WORLD_WIDTH
       entity.x_coord += 1
     end
   end
@@ -28,6 +31,6 @@ class World
   end
 
   def get_room_of(entity)
-    @rooms[entity.x_coord][entity.y_coord]
+    @rooms[entity.x_coord][entity.y_coord] ||= Room.new
   end
 end

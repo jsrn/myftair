@@ -1,18 +1,26 @@
 class Room
-  def description
-    "You are in a #{size} room. It is #{adjective}."
+  attr_accessor :size, :content
+
+  def initialize
+    @content   = get_content
+    @size      = get_size
+    @adjective = get_adjective
   end
 
-  def content
-    [Monster.new, Item.new].sample
+  def description
+    "You are in a #{@size} room. It is #{@adjective}."
   end
 
   private
-  def size
+  def get_content
+    [Monster.new, Item.new].sample
+  end
+
+  def get_size
     ["small", "medium", "large"].sample
   end
 
-  def adjective
+  def get_adjective
     ["pretty", "ugly", "hideous"].sample
   end
 end
