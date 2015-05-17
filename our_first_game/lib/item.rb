@@ -7,6 +7,9 @@ class Item
     @type = TYPES.sample
   end
 
+  def interact(player)
+  end
+
   def to_s
     "a shiny #{@type.to_s}"
   end

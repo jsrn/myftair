@@ -11,6 +11,10 @@ class Room
     "You are in a #{@size} room. It is #{@adjective}."
   end
 
+  def interact(player)
+    @content.interact(player)
+  end
+
   private
   def get_content
     [Monster.new, Item.new].sample

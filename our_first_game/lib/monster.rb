@@ -6,6 +6,9 @@ class Monster
     @attack_power = 1
   end
 
+  def interact(player)
+  end
+
   def to_s
     "a horrible monster! garurururu"
   end
