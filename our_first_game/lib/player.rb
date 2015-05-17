@@ -18,6 +18,11 @@ class Player
     @hit_points -= amount
   end
 
+  def heal(amount)
+    @hit_points += amount
+    @hit_points = [@hit_points, MAX_HIT_POINTS].min
+  end
+
   def print_status
     puts "*" * 80
     puts "HP: #{@hit_points}/#{MAX_HIT_POINTS}"

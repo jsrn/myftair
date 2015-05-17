@@ -11,8 +11,7 @@ class Item
     case @type
     when :potion
       puts "You pick up #{self}."
-      player.hit_points += 10
-      player.hit_points = 100 if player.hit_points > 100
+      player.heal(10)
     when :sword
       puts "You pick up #{self}."
       player.attack_power += 1
