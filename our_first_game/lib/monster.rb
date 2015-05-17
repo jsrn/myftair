@@ -1,8 +1,10 @@
 class Monster
   attr_accessor :hit_points, :attack_power
 
+  MAX_HIT_POINTS = 10
+
   def initialize
-    @hit_points   = 10
+    @hit_points   = MAX_HIT_POINTS
     @attack_power = 1
   end
 
