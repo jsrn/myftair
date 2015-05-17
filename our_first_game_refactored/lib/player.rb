@@ -9,8 +9,10 @@ class Player
   MAX_HIT_POINTS = 100
 
   def initialize
-    @hit_points        = MAX_HIT_POINTS
-    @attack_power      = 1
+    initialize_stats(BASE_STATS.merge ({
+      max_hit_points: MAX_HIT_POINTS
+    }))
+
     @x_coord, @y_coord = 0, 0
   end
 
