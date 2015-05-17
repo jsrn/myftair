@@ -11,6 +11,10 @@ class Game
   private
   def start_game
     while @player.alive?
+      @current_room = @world.get_room_of(@player)
+
+      print_status
+
       action = take_player_input
       next unless allowed_actions.include? action
 
@@ -27,16 +31,25 @@ class Game
     [:north, :east, :south, :west]
   end
 
+  def print_status
+    puts "You are at map coordinates [#{@player.x_coord}, #{@player.y_coord}]"
+
+    puts @current_room.description
+    puts "You see #{@current_room.content}"
+  end
+
   def take_action(action)
     case action
+    when :look
+      print_status
     when :north
-      move_player_north # not yet implemented
+      @world.move_entity_north(@player)
     when :east
-      move_player_east  # not yet implemented
+      @world.move_entity_east(@player)
     when :south
-      move_player_south # not yet implemented
+      @world.move_entity_south(@player)
     when :west
-      move_player_west  # not yet implemented
+      @world.move_entity_west(@player)
     end
   end
 end

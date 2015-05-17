@@ -5,4 +5,8 @@ class Monster
     @hit_points   = 10
     @attack_power = 1
   end
+
+  def to_s
+    "a horrible monster! garurururu"
+  end
 end
