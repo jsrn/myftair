@@ -5,8 +5,7 @@ class Sword < Item
     @name = "sword"
   end
 
-  def interact(player)
-    super(player)
+  def perform_item_effect(player)
     player.attack_power += 1
   end
 end

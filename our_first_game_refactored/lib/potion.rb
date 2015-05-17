@@ -5,8 +5,7 @@ class Potion < Item
     @name = "potion"
   end
 
-  def interact(player)
-    super(player)
+  def perform_item_effect(player)
     player.heal(10)
   end
 end
