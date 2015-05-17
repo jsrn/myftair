@@ -7,27 +7,19 @@ class World
   end
 
   def move_entity_north(entity)
-    if entity.y_coord > 0
-      entity.y_coord -= 1
-    end
+    entity.y_coord -= 1 if entity.y_coord > 0
   end
 
   def move_entity_south(entity)
-    if entity.y_coord < WORLD_HEIGHT
-      entity.y_coord += 1
-    end
+    entity.y_coord += 1 if entity.y_coord < WORLD_HEIGHT - 1
   end
 
   def move_entity_east(entity)
-    if entity.x_coord < WORLD_WIDTH
-      entity.x_coord += 1
-    end
+    entity.x_coord += 1 if entity.x_coord < WORLD_WIDTH - 1
   end
 
   def move_entity_west(entity)
-    if entity.x_coord > 0
-      entity.x_coord -= 1
-    end
+    entity.x_coord -= 1 if entity.x_coord > 0
   end
 
   def get_room_of(entity)
