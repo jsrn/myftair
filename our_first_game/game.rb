@@ -1,6 +1,8 @@
 Dir["lib/**.*"].each { |file| require_relative file }
 
 class Game
+  ACTIONS = [:north, :east, :south, :west]
+
   def initialize
     @world = World.new
     @player = Player.new
@@ -16,7 +18,7 @@ class Game
       print_status
 
       action = take_player_input
-      next unless allowed_actions.include? action
+      next unless ACTIONS.include? action
 
       take_action(action)
     end
@@ -25,10 +27,6 @@ class Game
   def take_player_input
     print "What's the plan, Stan? "
     gets.chomp.to_sym
-  end
-
-  def allowed_actions
-    [:north, :east, :south, :west]
   end
 
   def print_status
