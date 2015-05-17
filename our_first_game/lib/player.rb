@@ -14,6 +14,10 @@ class Player
     @hit_points > 0
   end
 
+  def hurt(amount)
+    @hit_points -= amount
+  end
+
   def print_status
     puts "*" * 80
     puts "HP: #{@hit_points}/#{MAX_HIT_POINTS}"
