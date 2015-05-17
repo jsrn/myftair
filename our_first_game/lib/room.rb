@@ -7,15 +7,15 @@ class Room
     @adjective = get_adjective
   end
 
-  def description
-    "You are in a #{@size} room. It is #{@adjective}."
-  end
-
   def interact(player)
     if @content
       @content.interact(player)
       @content = nil
     end
+  end
+
+  def to_s
+    "You are in a #{@size} room. It is #{@adjective}."
   end
 
   private

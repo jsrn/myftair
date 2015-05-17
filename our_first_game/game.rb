@@ -34,9 +34,9 @@ class Game
   def print_status
     puts "You are at map coordinates [#{@player.x_coord}, #{@player.y_coord}]"
 
-    puts @current_room.description
+    puts @current_room
     if @current_room.content
-      puts "You see #{@current_room.content}"
+      puts "You see #{@current_room.content}."
     end
   end
 
