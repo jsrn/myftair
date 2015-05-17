@@ -1,4 +1,8 @@
+require_relative "mortal.rb"
+
 class Player
+  include Mortal
+
   attr_accessor :hit_points, :attack_power
   attr_accessor :x_coord, :y_coord
 
@@ -8,19 +12,6 @@ class Player
     @hit_points        = MAX_HIT_POINTS
     @attack_power      = 1
     @x_coord, @y_coord = 0, 0
-  end
-
-  def alive?
-    @hit_points > 0
-  end
-
-  def hurt(amount)
-    @hit_points -= amount
-  end
-
-  def heal(amount)
-    @hit_points += amount
-    @hit_points = [@hit_points, MAX_HIT_POINTS].min
   end
 
   def print_status

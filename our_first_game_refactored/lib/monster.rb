@@ -1,4 +1,8 @@
+require_relative "mortal.rb"
+
 class Monster
+  include Mortal
+
   attr_accessor :hit_points, :attack_power
 
   MAX_HIT_POINTS = 10
@@ -6,14 +10,6 @@ class Monster
   def initialize
     @hit_points   = MAX_HIT_POINTS
     @attack_power = 1
-  end
-
-  def alive?
-    @hit_points > 0
-  end
-
-  def hurt(amount)
-    @hit_points -= amount
   end
 
   def to_s
