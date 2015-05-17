@@ -8,6 +8,15 @@ class Item
   end
 
   def interact(player)
+    case @type
+    when :potion
+      puts "You pick up a shiny awesome potion."
+      player.hit_points += 10
+      player.hit_points = 100 if player.hit_points > 100
+    when :sword
+      puts "You pick up a shiny awesome sword."
+      player.attack_power += 1
+    end
   end
 
   def to_s

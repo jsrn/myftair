@@ -13,6 +13,7 @@ class Room
 
   def interact(player)
     @content.interact(player)
+    @content = nil
   end
 
   private
