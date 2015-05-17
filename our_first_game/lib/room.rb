@@ -12,8 +12,10 @@ class Room
   end
 
   def interact(player)
-    @content.interact(player)
-    @content = nil
+    if @content
+      @content.interact(player)
+      @content = nil
+    end
   end
 
   private
