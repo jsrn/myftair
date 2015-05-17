@@ -2,7 +2,7 @@ Dir["lib/**.*"].each { |file| require_relative file }
 
 class Game
   ACTIONS = [
-    :north, :east, :south, :west, :look, :fight, :take
+    :north, :east, :south, :west, :look, :fight, :take, :status
   ]
 
   def initialize
@@ -54,6 +54,8 @@ class Game
       @world.move_entity_west(@player)
     when :fight, :take
       @current_room.interact(@player)
+    when :status
+      @player.print_status
     end
   end
 end
