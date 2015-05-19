@@ -1,7 +1,7 @@
 require_relative "mortal.rb"
 
 class Monster
-  include Mortal
+  include Combatant
 
   attr_accessor :hit_points, :attack_power
 

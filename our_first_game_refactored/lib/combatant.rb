@@ -1,4 +1,4 @@
-module Mortal
+module Combatant
   BASE_STATS = {
     max_hit_points: 10,
     attack_power:   1

@@ -1,7 +1,7 @@
 require_relative "mortal.rb"
 
 class Player
-  include Mortal
+  include Combatant
 
   attr_accessor :hit_points, :attack_power
   attr_accessor :x_coord, :y_coord
