@@ -1,9 +1,7 @@
-require_relative "mortal.rb"
+require_relative "combatable.rb"
 
 class Player
   include Combatable
-
-  attr_accessor :hit_points, :attack_power
   attr_accessor :x_coord, :y_coord
 
   MAX_HIT_POINTS = 100

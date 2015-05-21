@@ -4,6 +4,10 @@ module Combatable
     attack_power:   1
   }
 
+  def Combatable.included(mod)
+    attr_accessor :hit_points, :attack_power
+  end
+
   def initialize_stats(stats)
     @stats = stats
 

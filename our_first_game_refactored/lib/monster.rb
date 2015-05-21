@@ -1,9 +1,7 @@
-require_relative "mortal.rb"
+require_relative "combatable.rb"
 
 class Monster
   include Combatable
-
-  attr_accessor :hit_points, :attack_power
 
   def initialize
     initialize_stats(BASE_STATS)
