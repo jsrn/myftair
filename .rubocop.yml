@@ -1,0 +1,30 @@
+AllCops:
+  RunRailsCops: true
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+
+Metrics/LineLength:
+  Max: 120
+
+Style/Encoding:
+  EnforcedStyle: when_needed
+
+Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Description: 'Checks if uses of quotes match the configured preference.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-string-literals'
+  Enabled: false
+
+Style/SingleSpaceBeforeFirstArg:
+  Description: >-
+                 Checks that exactly one space is used between a method name
+                 and the first argument for method calls without parentheses.
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
