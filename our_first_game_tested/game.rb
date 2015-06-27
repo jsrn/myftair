@@ -1,9 +1,9 @@
-Dir["lib/**.*"].each { |file| require_relative file }
+Dir['lib/**.*'].each { |file| require_relative file }
 
+# This is the main class of our game. It initialises the basic state of the
+# world, creates the player, and initialises the game loop.
 class Game
-  ACTIONS = [
-    :north, :east, :south, :west, :look, :fight, :take, :status
-  ]
+  ACTIONS = %i(north east south west look fight take status)
 
   def initialize
     @world = World.new
@@ -13,6 +13,7 @@ class Game
   end
 
   private
+
   def start_game
     while @player.alive?
       @current_room = @world.get_room_of(@player)
@@ -35,9 +36,7 @@ class Game
     puts "You are at map coordinates [#{@player.x_coord}, #{@player.y_coord}]"
 
     puts @current_room
-    if @current_room.content
-      puts "You see #{@current_room.content}."
-    end
+    puts "You see #{@current_room.content}." if @current_room.content
   end
 
   def take_action(action)
